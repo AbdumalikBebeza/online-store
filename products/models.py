@@ -20,7 +20,8 @@ class Product(models.Model):
     image = models.ImageField()
     price = models.FloatField()
     rate = models.DecimalField(max_digits=10, decimal_places=1)
-    category = models.ForeignKey(Category, on_delete=models.CASCADE, null=True)
+    category = models.ForeignKey(Category, on_delete=models.CASCADE, null=True,
+                                 related_name="products")
 
     def __str__(self):
         return self.title
